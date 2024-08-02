@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  servicereg:
+    image: pgananc/servicereg:latest
+    container_name: servicereg
+    build: ../service-reg
+    ports:
+      - "8761:8761"
+    depends_on:
+      - rabbitmq
+    networks:
+      - microservice-network
+
+  account:
+    image: pgananc/account
+    container_name: account
+    build: ../account
+    ports:
+      - 8081:8081
+    depends_on:
+      - servicereg
+    networks:
+      - microservice-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  client:
+    image: pgananc/client
+    container_name: client
+    build: ../client
+    ports:
+      - 8080:8080
+    depends_on:
+      - servicereg
+    networks:
+      - microservice-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://servicereg:8761/eureka
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - microservice-network
+
+networks:
+  microservice-network:
+    driver: bridge
