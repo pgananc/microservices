@@ -1,14 +1,17 @@
 # Microservices
 
+## Arquitectura
+![Arquitectura](https://github.com/user-attachments/assets/9246572b-6c61-4baa-a1f8-b2e9d7de82ce)
+
 # Ejecución Docker Compose con Microservices
 
-Este proyecto usa Docker Compose para ejecutar RabbitMQ y Eureka Server para comunicacion de microservicios y descubrimeinto de servicios.
+Este proyecto usa Docker Compose para ejecutar RabbitMQ y Eureka Server para comunicacion de microservicios y descubrimiento de servicios.
 
 ## Prerequisitos
 
 Docker [Aqui](https://www.docker.com/get-started).
 
-## Getting Started
+## Proceso de construcción de aplicación
 
 1. Clonar el repositorio:
 
@@ -73,12 +76,12 @@ docker-compose down
 
 ```bash
 1. Script de base de datos: BaseDatos.sql
-2. EndPoints: cuenta-bancaria.postman_collection.json
+2. EndPoints: Microservices.postman_collection.json
+3. Variable de entorno: microservices.postman_environment.json
 
 ```
 
-**DISFRUTA DEL BACK END!!!**
 
 **DEVELOPER:** Pablo Ganan
 
-**Correo:** pablos.ganan@gmail.com
+**Correo:** pabi1984@gmail.com
