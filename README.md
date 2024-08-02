@@ -60,7 +60,7 @@ docker-compose down
 
 - RabbitMQ:
   - Web UI: http://localhost:15672
-  - AMQP port: localhost:5672
+  - AMQP: localhost:5672
 - Eureka Server:
   - Dashboard: http://localhost:8761
 
@@ -84,4 +84,4 @@ docker-compose down
 
 **DEVELOPER:** Pablo Ganan
 
-**Correo:** pabi1984@gmail.com
+**Correo:** pabi1984@hotmail.com
